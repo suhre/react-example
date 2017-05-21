@@ -8,7 +8,9 @@ class MainContainer extends Component {
     render() {
         return (
             <div className="container">
-                <Header/>
+                <Header
+                    name={this.props.user.name}
+                />
                 <ProfileContainer/>
                 <PostContainer/>
                 <Footer/>

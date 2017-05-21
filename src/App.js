@@ -21,12 +21,14 @@ class App extends Component {
     }
 
     componentDidMount() {
-        //this.loadUserProfileById(1);
+        this.loadUserProfileById(1);
     }
 
     render() {
         return (
-            <MainContainer/>
+            <MainContainer
+                user={this.state.user}
+            />
         );
     }
 }
