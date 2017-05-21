@@ -9,6 +9,7 @@ class App extends Component {
         this.state = {
             user: {}
         };
+        this.handleNextProfile = this.handleNextProfile.bind(this);
     }
 
     loadUserProfileById(id) {
@@ -24,9 +25,14 @@ class App extends Component {
         this.loadUserProfileById(1);
     }
 
+    handleNextProfile() {
+        this.loadUserProfileById(this.state.user.id + 1);
+    }
+
     render() {
         return (
             <MainContainer
+                onNextProfileClicked={this.handleNextProfile}
                 user={this.state.user}
             />
         );

@@ -7,7 +7,7 @@ class Header extends Component {
             <div className="header clearfix">
                 <nav>
                     <ul className="nav nav-pills pull-right">
-                        <li role="presentation" className="active"><a href="#">Next</a></li>
+                        <li role="presentation" className="active"><a onClick={this.props.onNextProfileClicked} href="#">Next</a></li>
                     </ul>
                 </nav>
                 <h3 className="text-muted">Profil {this.props.name}</h3>
