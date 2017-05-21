@@ -13,7 +13,10 @@ class MainContainer extends Component {
                     onNextProfileClicked={this.props.onNextProfileClicked}
                 />
                 <ProfileContainer/>
-                <PostContainer/>
+                <PostContainer
+                    userId={this.props.user.id}
+                    loadUserPostsById={this.props.serverConnection.loadUserPostsById}
+                />
                 <Footer/>
             </div>
         );

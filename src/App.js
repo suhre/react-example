@@ -34,6 +34,7 @@ class App extends Component {
             <MainContainer
                 onNextProfileClicked={this.handleNextProfile}
                 user={this.state.user}
+                {...this.props}
             />
         );
     }

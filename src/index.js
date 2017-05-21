@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 import './index.css';
 import './jumbotron-narrow.css';
+import './blog.css';
 
 let serverConnection = new ServerConnection();
 
