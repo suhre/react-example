@@ -15,7 +15,7 @@ class ServerConnection {
         return fetch('http://jsonplaceholder.typicode.com/users/' + id)
             .then(function (response) {
                 // Convert response to json
-                return response.json()
+                return response.json();
             })
             .catch(function (error) {
                 console.log(error);
@@ -33,7 +33,7 @@ class ServerConnection {
         return fetch('http://jsonplaceholder.typicode.com/posts?userId=' + id)
             .then(function (response) {
                 // Convert response to json
-                return response.json()
+                return response.json();
             })
             .catch(function (error) {
                 console.log(error);

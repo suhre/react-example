@@ -1,0 +1,16 @@
+import React, {Component} from 'react';
+
+class Post extends Component {
+
+    render() {
+        return (
+            <div className="blog-post">
+                <h2 className="blog-post-title">{this.props.title}</h2>
+                <p className="blog-post-meta">December 23, 2013</p>
+                <p>{this.props.body}</p>
+            </div>
+        );
+    }
+}
+
+export default Post;

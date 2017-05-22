@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Post from "./Post";
 
 class PostContainer extends Component {
 
@@ -26,45 +27,22 @@ class PostContainer extends Component {
 
     render() {
         // Loop through all user posts
-        // TODO: Create component 'Post' etc.
         let posts = this.state.posts.map(function (post) {
             return (
-                <div key={post.id}>
-                    {post.title}
-                </div>
+                <Post key={post.id}
+                      title={post.title}
+                      id={post.id}
+                      body={post.body}
+                      userId={post.userId}
+                />
             )
         });
 
         return (
             <div className="row marketing">
-                {/*
-                 Print post titles for testing
-                 TODO: Design real DOM
-                 */}
+                <hr/>
+
                 {posts}
-                <div className="col-lg-6">
-                    <h4>Subheading</h4>
-                    <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-                    <h4>Subheading</h4>
-                    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit
-                        amet fermentum.</p>
-
-                    <h4>Subheading</h4>
-                    <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-                </div>
-
-                <div className="col-lg-6">
-                    <h4>Subheading</h4>
-                    <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-                    <h4>Subheading</h4>
-                    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit
-                        amet fermentum.</p>
-
-                    <h4>Subheading</h4>
-                    <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-                </div>
             </div>
         );
     }
