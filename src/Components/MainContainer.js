@@ -5,6 +5,7 @@ import ProfileContainer from "./ProfileContainer";
 import PostContainer from "./PostContainer";
 
 class MainContainer extends Component {
+
     render() {
         return (
             <div className="container">
@@ -12,7 +13,9 @@ class MainContainer extends Component {
                     name={this.props.user.name}
                     onNextProfileClicked={this.props.onNextProfileClicked}
                 />
-                <ProfileContainer/>
+                <ProfileContainer
+                    user={this.props.user}
+                />
                 <PostContainer
                     userId={this.props.user.id}
                     loadUserPostsById={this.props.serverConnection.loadUserPostsById}
