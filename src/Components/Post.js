@@ -6,7 +6,7 @@ class Post extends Component {
         return (
             <div className="blog-post">
                 <h2 className="blog-post-title">{this.props.title}</h2>
-                <p className="blog-post-meta">December 23, 2013</p>
+                <p className="blog-post-meta">Post: {this.props.id}</p>
                 <p>{this.props.body}</p>
             </div>
         );

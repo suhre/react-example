@@ -10,7 +10,7 @@ class Header extends Component {
                         <li role="presentation" className="active"><a onClick={this.props.onNextProfileClicked} href="#">Next</a></li>
                     </ul>
                 </nav>
-                <h3 className="text-muted">Profil {this.props.name}</h3>
+                <h3 className="text-muted">Profil: {this.props.name}</h3>
             </div>
         );
     }
