@@ -40,8 +40,8 @@ class PostContainer extends Component {
 
         return (
             <div className="row marketing">
+                <h3 className="text-muted">Posts</h3>
                 <hr/>
-
                 {posts}
             </div>
         );
