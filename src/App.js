@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import MainContainer from "./Components/MainContainer";
+import ServerConnection from './ServerConnection';
 
 class App extends Component {
 
@@ -9,13 +10,17 @@ class App extends Component {
         this.state = {
             user: {}
         };
+        this.serverConnection = new ServerConnection();
         this.handleNextProfile = this.handleNextProfile.bind(this);
         this.handlePreviousProfile = this.handlePreviousProfile.bind(this);
     }
 
     loadUserProfileById(id) {
-        this.props.serverConnection.loadUserProfileById(id)
+        this.serverConnection.loadUserProfileById(id)
             .then(function (data) {
+                if(data === undefined){
+                    return;
+                }
                 if (data.status === 404) {
                     // 404 (Not Found)
                     // The example has only 10 profiles ...
@@ -51,7 +56,7 @@ class App extends Component {
                 onNextProfileClicked={this.handleNextProfile}
                 onPreviousProfileClicked={this.handlePreviousProfile}
                 user={this.state.user}
-                {...this.props}
+                serverConnection={this.serverConnection}
             />
         );
     }
