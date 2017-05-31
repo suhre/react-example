@@ -11,6 +11,7 @@ class MainContainer extends Component {
             <div className="container">
                 <Header
                     name={this.props.user.name}
+                    id={this.props.user.id}
                     onNextProfileClicked={this.props.onNextProfileClicked}
                     onPreviousProfileClicked={this.props.onPreviousProfileClicked}
                 />
