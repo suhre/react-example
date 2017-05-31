@@ -12,7 +12,7 @@ class ServerConnection {
      * @returns {Promise.<T>}
      */
     loadUserProfileById(id) {
-        return fetch('http://jsonplaceholder.typicode.com/users/' + id)
+        return fetch('https://jsonplaceholder.typicode.com/users/' + id)
             .then(response =>
                 response.json().then(data => ({
                         user: data,
@@ -33,7 +33,7 @@ class ServerConnection {
      * @returns {Promise.<T>}
      */
     loadUserPostsById(id) {
-        return fetch('http://jsonplaceholder.typicode.com/posts?userId=' + id)
+        return fetch('https://jsonplaceholder.typicode.com/posts?userId=' + id)
             .then(function (response) {
                 // Convert response to json
                 return response.json();
