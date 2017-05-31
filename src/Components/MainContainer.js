@@ -12,6 +12,7 @@ class MainContainer extends Component {
                 <Header
                     name={this.props.user.name}
                     onNextProfileClicked={this.props.onNextProfileClicked}
+                    onPreviousProfileClicked={this.props.onPreviousProfileClicked}
                 />
                 <ProfileContainer
                     user={this.props.user}
