@@ -13,10 +13,13 @@ class ServerConnection {
      */
     loadUserProfileById(id) {
         return fetch('http://jsonplaceholder.typicode.com/users/' + id)
-            .then(function (response) {
-                // Convert response to json
-                return response.json();
-            })
+            .then(response =>
+                response.json().then(data => ({
+                        user: data,
+                        status: response.status
+                    })
+                )
+            )
             .catch(function (error) {
                 console.log(error);
             });

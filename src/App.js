@@ -14,10 +14,19 @@ class App extends Component {
 
     loadUserProfileById(id) {
         this.props.serverConnection.loadUserProfileById(id)
-            .then(function (json) {
-                this.setState({
-                    user: json
-                });
+            .then(function (data) {
+                if (data.status === 404) {
+                    // 404 (Not Found)
+                    // The example has only 10 profiles ...
+                    // ... so reset to profile 1 if the last profile is reached.
+                    // (Attention: If loadUserProfileById(1) returns also a 404 we have a loop)
+                    this.loadUserProfileById(1);
+                } else {
+                    this.setState({
+                        user: data.user
+                    });
+                }
+
             }.bind(this));
     }
 
